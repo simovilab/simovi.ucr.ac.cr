@@ -112,8 +112,44 @@ export const collections = {
     source: '3.blog.yml',
     type: 'page'
   }),
+  research: defineCollection({
+    source: '1.research.yml',
+    type: 'page'
+  }),
+  development: defineCollection({
+    source: '2.development.yml',
+    type: 'page'
+  }),
+  services: defineCollection({
+    source: '3.services.yml',
+    type: 'page'
+  }),
+  teaching: defineCollection({
+    source: '4.teaching.yml',
+    type: 'page'
+  }),
+  team: defineCollection({
+    source: '5.team.yml',
+    type: 'page'
+  }),
+  partners: defineCollection({
+    source: '6.partners.yml',
+    type: 'page'
+  }),
+  news: defineCollection({
+    source: '7.news.yml',
+    type: 'page'
+  }),
+  about: defineCollection({
+    source: '8.about.yml',
+    type: 'page'
+  }),
+  contact: defineCollection({
+    source: '9.contact.yml',
+    type: 'page'
+  }),
   posts: defineCollection({
-    source: '3.blog/**/*',
+    source: 'blog/**/*',
     type: 'page',
     schema: z.object({
       image: z.object({ src: z.string().nonempty().editor({ input: 'media' }) }),
@@ -129,7 +165,7 @@ export const collections = {
     })
   }),
   changelog: defineCollection({
-    source: '4.changelog.yml',
+    source: 'changelog.yml',
     type: 'page'
   }),
   versions: defineCollection({

@@ -1,19 +1,36 @@
 <script setup lang="ts">
+import * as locales from '@nuxt/ui/locale'
+
 const route = useRoute()
+const { locale, setLocale } = useI18n()
 
 const items = computed(() => [{
-  label: 'Docs',
-  to: '/docs',
-  active: route.path.startsWith('/docs')
+  label: 'Research',
+  to: '/research'
 }, {
-  label: 'Pricing',
-  to: '/pricing'
+  label: 'Development',
+  to: '/development'
 }, {
-  label: 'Blog',
-  to: '/blog'
+  label: 'Services',
+  to: '/services'
 }, {
-  label: 'Changelog',
-  to: '/changelog'
+  label: 'Teaching',
+  to: '/teaching'
+}, {
+  label: 'Team',
+  to: '/team'
+}, {
+  label: 'Partners',
+  to: '/partners'
+}, {
+  label: 'News',
+  to: '/news'
+}, {
+  label: 'About',
+  to: '/about'
+}, {
+  label: 'Contact',
+  to: '/contact'
 }])
 </script>
 
@@ -23,7 +40,6 @@ const items = computed(() => [{
       <NuxtLink to="/">
         <AppLogo class="w-auto h-6 shrink-0" />
       </NuxtLink>
-      <TemplateMenu />
     </template>
 
     <UNavigationMenu
@@ -32,31 +48,15 @@ const items = computed(() => [{
     />
 
     <template #right>
+
+      <ULocaleSelect
+        :model-value="locale"
+        :locales="[locales.en, locales.es]"
+        @update:model-value="setLocale($event as 'es' | 'en')"
+      />
+
       <UColorModeButton />
 
-      <UButton
-        icon="i-lucide-log-in"
-        color="neutral"
-        variant="ghost"
-        to="/login"
-        class="lg:hidden"
-      />
-
-      <UButton
-        label="Sign in"
-        color="neutral"
-        variant="outline"
-        to="/login"
-        class="hidden lg:inline-flex"
-      />
-
-      <UButton
-        label="Sign up"
-        color="neutral"
-        trailing-icon="i-lucide-arrow-right"
-        class="hidden lg:inline-flex"
-        to="/signup"
-      />
     </template>
 
     <template #body>

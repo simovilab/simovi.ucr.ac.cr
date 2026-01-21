@@ -6,7 +6,9 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/content',
     '@vueuse/nuxt',
-    'nuxt-og-image'
+    'nuxt-og-image',
+    'nuxt-studio',
+    '@nuxtjs/i18n'
   ],
 
   devtools: {
@@ -20,6 +22,14 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2024-07-11',
+
+  i18n: {
+    defaultLocale: 'es',
+    locales: [
+      { code: 'es', name: 'Español', file: 'es.json' },
+      { code: 'en', name: 'English', file: 'en.json' }
+    ]
+  },
 
   nitro: {
     prerender: {
