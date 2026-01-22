@@ -48,6 +48,13 @@ export const collections = {
       prefix: '',
     },
   }),
+  content_pt: defineCollection({
+    type: 'page',
+    source: {
+      include: 'pt/**',
+      prefix: '',
+    },
+  }),
   docs: defineCollection({
     source: '1.docs/**/*',
     type: 'page'

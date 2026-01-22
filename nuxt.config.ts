@@ -1,3 +1,5 @@
+import { pt } from "zod/locales";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -27,24 +29,25 @@ export default defineNuxtConfig({
     defaultLocale: 'es',
     locales: [
       { code: 'es', name: 'Español', language: 'es-CR', file: 'es.json' },
-      { code: 'en', name: 'English', language: 'en-US', file: 'en.json' }
+      { code: 'en', name: 'English', language: 'en-US', file: 'en.json' },
+      { code: 'pt', name: 'Português', language: 'pt-BR', file: 'pt.json' }
     ],
     strategy: 'prefix_except_default',
     customRoutes: 'config',
     pages: {
-      research: { es: '/investigacion', en: '/research' },
-      development: { es: '/desarrollo', en: '/development' },
-      services: { es: '/servicios', en: '/services' },
-      teaching: { es: '/docencia', en: '/teaching' },
-      team: { es: '/equipo', en: '/team' },
-      partners: { es: '/alianzas', en: '/partners' },
-      news: { es: '/noticias', en: '/news' },
-      about: { es: '/acerca', en: '/about' },
-      contact: { es: '/contacto', en: '/contact' },
-      pricing: { es: '/precios', en: '/pricing' },
-      blog: { es: '/blog', en: '/blog' },
-      login: { es: '/ingresar', en: '/login' },
-      signup: { es: '/registro', en: '/signup' }
+      research: { es: '/investigacion', en: '/research', pt: '/pesquisa' },
+      development: { es: '/desarrollo', en: '/development', pt: '/desenvolvimento' },
+      services: { es: '/servicios', en: '/services', pt: '/servicos' },
+      teaching: { es: '/docencia', en: '/teaching', pt: '/ensino' },
+      team: { es: '/equipo', en: '/team', pt: '/equipe' },
+      partners: { es: '/alianzas', en: '/partners', pt: '/parcerias' },
+      news: { es: '/noticias', en: '/news', pt: '/noticias' },
+      about: { es: '/acerca', en: '/about', pt: '/sobre' },
+      contact: { es: '/contacto', en: '/contact', pt: '/contato' },
+      pricing: { es: '/precios', en: '/pricing', pt: '/precos' },
+      blog: { es: '/blog', en: '/blog', pt: '/blog' },
+      login: { es: '/ingresar', en: '/login', pt: '/login' },
+      signup: { es: '/registro', en: '/signup', pt: '/registro' }
     }
   },
 

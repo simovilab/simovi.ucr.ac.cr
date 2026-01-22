@@ -52,8 +52,8 @@ const items = computed(() => [{
 
       <ULocaleSelect
         :model-value="locale"
-        :locales="[locales.en, locales.es]"
-        @update:model-value="setLocale($event as 'es' | 'en')"
+        :locales="[locales.es, locales.en, locales.pt]"
+        @update:model-value="setLocale($event as 'es' | 'en' | 'pt')"
       />
 
       <UColorModeButton />
