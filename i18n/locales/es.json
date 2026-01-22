@@ -1,3 +1,11 @@
 {
-  "welcome": "Bienvenido"
+  "research": "Investigación",
+  "development": "Desarrollo",
+  "services": "Servicios",
+  "teaching": "Docencia",
+  "team": "Equipo",
+  "partners": "Alianzas",
+  "news": "Noticias",
+  "about": "Acerca",
+  "contact": "Contacto"
 }

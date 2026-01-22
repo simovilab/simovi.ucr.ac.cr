@@ -1,3 +1,11 @@
 {
-  "welcome": "Welcome"
+  "research": "Research",
+  "development": "Development",
+  "services": "Services",
+  "teaching": "Teaching",
+  "team": "Team",
+  "partners": "Partners",
+  "news": "News",
+  "about": "About",
+  "contact": "Contact"
 }

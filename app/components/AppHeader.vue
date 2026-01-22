@@ -3,41 +3,42 @@ import * as locales from '@nuxt/ui/locale'
 
 const route = useRoute()
 const { locale, setLocale } = useI18n()
+const localePath = useLocalePath()
 
 const items = computed(() => [{
-  label: 'Research',
-  to: '/research'
+  label: $t('research'),
+  to: localePath('research')
 }, {
-  label: 'Development',
-  to: '/development'
+  label: $t('development'),
+  to: localePath('development')
 }, {
-  label: 'Services',
-  to: '/services'
+  label: $t('services'),
+  to: localePath('services')
 }, {
-  label: 'Teaching',
-  to: '/teaching'
+  label: $t('teaching'),
+  to: localePath('teaching')
 }, {
-  label: 'Team',
-  to: '/team'
+  label: $t('team'),
+  to: localePath('team')
 }, {
-  label: 'Partners',
-  to: '/partners'
+  label: $t('partners'),
+  to: localePath('partners')
 }, {
-  label: 'News',
-  to: '/news'
+  label: $t('news'),
+  to: localePath('news')
 }, {
-  label: 'About',
-  to: '/about'
+  label: $t('about'),
+  to: localePath('about')
 }, {
-  label: 'Contact',
-  to: '/contact'
+  label: $t('contact'),
+  to: localePath('contact')
 }])
 </script>
 
 <template>
   <UHeader>
     <template #left>
-      <NuxtLink to="/">
+      <NuxtLink :to="localePath('index')">
         <AppLogo class="w-auto h-6 shrink-0" />
       </NuxtLink>
     </template>
@@ -72,14 +73,14 @@ const items = computed(() => [{
         label="Sign in"
         color="neutral"
         variant="subtle"
-        to="/login"
+        :to="localePath('login')"
         block
         class="mb-3"
       />
       <UButton
         label="Sign up"
         color="neutral"
-        to="/signup"
+        :to="localePath('signup')"
         block
       />
     </template>

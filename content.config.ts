@@ -33,6 +33,25 @@ const createImageSchema = () => z.object({
 })
 
 export const collections = {
+  content_es: defineCollection({
+    type: 'page',
+    source: {
+      include: 'es/**',
+      prefix: '',
+    },
+
+  }),
+  content_en: defineCollection({
+    type: 'page',
+    source: {
+      include: 'en/**',
+      prefix: '',
+    },
+  }),
+  docs: defineCollection({
+    source: '1.docs/**/*',
+    type: 'page'
+  }),
   index: defineCollection({
     source: '0.index.yml',
     type: 'page',
@@ -70,10 +89,6 @@ export const collections = {
         links: z.array(createLinkSchema())
       })
     })
-  }),
-  docs: defineCollection({
-    source: '1.docs/**/*',
-    type: 'page'
   }),
   pricing: defineCollection({
     source: '2.pricing.yml',

@@ -1,5 +1,21 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData('team', () => queryCollection('team').first())
+import type { Collections } from '@nuxt/content'
+
+const { locale } = useI18n()
+const source = 'team'
+
+const { data: page } = await useAsyncData(source + '-' + locale.value, async () => {
+  const collection = (`content_${locale.value}`) as keyof Collections
+  const content = await queryCollection(collection).path('/' + source).first()
+
+  if (!content && locale.value !== 'es') {
+    return await queryCollection('content_es').path('/' + source).first()
+  }
+
+  return content
+}, {
+  watch: [locale]
+})
 
 const title = page.value?.seo?.title || page.value?.title
 const description = page.value?.seo?.description || page.value?.description
