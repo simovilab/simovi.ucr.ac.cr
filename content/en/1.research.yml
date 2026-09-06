@@ -1,4 +1,7 @@
 title: Research
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a ultricies nisl, quis iaculis nibh. Proin elementum felis eget risus convallis rhoncus. Duis finibus consectetur neque, et scelerisque quam molestie ut. Duis pellentesque lobortis urna, at mattis mi hendrerit sed. Etiam sed neque interdum, iaculis tortor eget, ultricies mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. Integer et diam ligula.
+alert:
+  title: Heads up!
+  description: This is an important alert message.
 navigation:
   icon: i-lucide-newspaper

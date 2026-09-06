@@ -10,6 +10,12 @@ const createBaseSchema = () => z.object({
   description: z.string().nonempty()
 })
 
+const createLocalizedPageSchema = () => z.object({
+  title: z.string().nonempty(),
+  description: z.string().nonempty(),
+  alert: createBaseSchema().optional()
+})
+
 const createFeatureItemSchema = () => createBaseSchema().extend({
   icon: z.string().nonempty().editor({ input: 'icon' })
 })
@@ -39,6 +45,7 @@ export const collections = {
       include: 'es/**',
       prefix: '',
     },
+    schema: createLocalizedPageSchema()
 
   }),
   content_en: defineCollection({
@@ -47,6 +54,7 @@ export const collections = {
       include: 'en/**',
       prefix: '',
     },
+    schema: createLocalizedPageSchema()
   }),
   content_pt: defineCollection({
     type: 'page',
@@ -54,6 +62,7 @@ export const collections = {
       include: 'pt/**',
       prefix: '',
     },
+    schema: createLocalizedPageSchema()
   }),
   docs: defineCollection({
     source: '1.docs/**/*',
@@ -136,7 +145,8 @@ export const collections = {
   }),
   research: defineCollection({
     source: '1.research.yml',
-    type: 'page'
+    type: 'page',
+    schema: createLocalizedPageSchema()
   }),
   development: defineCollection({
     source: '2.development.yml',

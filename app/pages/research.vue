@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import type { Collections } from '@nuxt/content'
-
 const { locale } = useI18n()
 const source = 'research'
 
 const { data: page } = await useAsyncData(source + '-' + locale.value, async () => {
-  const collection = (`content_${locale.value}`) as keyof Collections
-  const content = await queryCollection(collection).path('/' + source).first()
+  const content = locale.value === 'en'
+    ? await queryCollection('content_en').path('/' + source).first()
+    : locale.value === 'pt'
+      ? await queryCollection('content_pt').path('/' + source).first()
+      : await queryCollection('content_es').path('/' + source).first()
 
   if (!content && locale.value !== 'es') {
     return await queryCollection('content_es').path('/' + source).first()
@@ -34,18 +35,9 @@ useSeoMeta({
     <UPageHero
       :title="page.title"
       :description="page.description"
-    >
-      <template #top>
-        <HeroBackground />
-      </template>
-
-      <template #title>
-        <MDC
-          :value="page.title"
-          unwrap="p"
-        />
-      </template>
-
-    </UPageHero>
+    />
+    <UContainer v-if="page.alert">
+      <UAlert :title="page.alert.title" :description="page.alert.description" />
+    </UContainer>
   </div>
 </template>

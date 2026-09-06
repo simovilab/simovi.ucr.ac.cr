@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-og-image',
     'nuxt-studio',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@comark/nuxt'
   ],
 
   devtools: {
